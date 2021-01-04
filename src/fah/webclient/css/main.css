@@ -2,7 +2,7 @@ html, button, input, select, textarea {color: #222}
 body {
     font-size: 14px;
     line-height: 1.4;
-    background: url(../images/template/bg.jpg) #5875a0;
+    background: #5875a0;
     text-align: center;
 }
 ::-moz-selection {
@@ -573,7 +573,7 @@ a.btn:hover {background: #ddd;}
 .box-pu li .download span {
     background: url(../images/template/anim_download.gif) no-repeat 10px 10px;
 }
-.box-pu li .stop {
+.box-pu li .stop, .box-pu li .disabled {
     background: #e03131;
     background-image:
     -webkit-gradient(linear, left top, left bottom, from(#fb8484), to(#e03131));
@@ -584,6 +584,9 @@ a.btn:hover {background: #ddd;}
     background-image: linear-gradient(#fb8484, #e03131);
 }
 .box-pu li .stop span {background: none}
+.box-pu li .disabled span {
+  background: url(../images/template/disabled.png) no-repeat 11px 14px;
+}
 .box-pu li .pause, .box-pu li .finish {
     background: #e8b70c;
     background-image:
@@ -730,6 +733,12 @@ a.btn:hover {background: #ddd;}
 .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
     border-bottom-right-radius: 10px;
 }
+.ui-dialog {
+    z-index: 100;
+}
+.ui-dialog .ui-dialog-titlebar-close span {
+    margin: -9px;
+}
 #box-power-slider #labels {
     width: 204px;
     margin-top: 10px;
@@ -790,21 +799,4 @@ a.btn:hover {background: #ddd;}
 #bug-iframe {
     width: 100%;
     height: 400px;
-}
-
-#overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: black;
-    opacity: 0.9;
-    display: none;
-    z-index: 1000;
-    text-align: center;
-    padding: 10%;
-    font-size: 60px;
-    font-weight: bold;
-    color: #444;
 }
